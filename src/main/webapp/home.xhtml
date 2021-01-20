@@ -1,10 +1,11 @@
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h = "http://java.sun.com/jsf/html">
 
 <head>
     <title>Card-Memory-Game</title>
+    <h:outputStylesheet library="css" name="home.css"/> 
 </head>
 
 <body>
@@ -17,6 +18,8 @@
             </li>
         </ui:repeat>
     </ul>
+    <h:commandButton action="game" value="Start" />
+    <h:outputScript library="js" name="home.js" /> 
 </body>
 
 </html>

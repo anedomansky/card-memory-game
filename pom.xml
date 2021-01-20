@@ -9,6 +9,8 @@
   <url>http://maven.apache.org</url>
   <properties>
   	<java.version>11</java.version>
+    <frontend-maven-plugin.version>1.7.6</frontend-maven-plugin.version>
+    <node.version>v14.15.3</node.version>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
@@ -23,25 +25,93 @@
       <groupId>com.sun.faces</groupId>
       <artifactId>jsf-api</artifactId>
       <version>2.1.7</version>
-   </dependency>
-   <dependency>
+  </dependency>
+  <dependency>
       <groupId>com.sun.faces</groupId>
       <artifactId>jsf-impl</artifactId>
       <version>2.1.7</version>
-   </dependency>
+  </dependency>
   </dependencies>
   <build>
     <finalName>card-memory-game</finalName>
+    <resources>
+      <resource>
+        <directory>${project.basedir}/src/main/resources</directory>
+        <includes>
+          <include>build/*</include>
+        </includes>
+      </resource>
+    </resources>
     <plugins>
-         <plugin>
+        <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>2.3.1</version>
             <configuration>
-               <source>11</source>
-               <target>11</target>
+              <source>11</source>
+              <target>11</target>
             </configuration>
-         </plugin>
+        </plugin>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+                <workingDirectory>${project.basedir}/src/main/resources</workingDirectory>
+                <!-- <installDirectory>${project.build.directory}</installDirectory> -->
+            </configuration>
+            <executions>
+                <execution>
+                    <id>npm install</id>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>npm</executable>
+                        <arguments>
+                          <argument>install</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+                <execution>
+                    <id>build-frontend</id>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <phase>prepare-package</phase>
+                    <configuration>
+                        <executable>npm</executable>
+                        <arguments>
+                          <argument>run</argument>
+                          <argument>build</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.1</version>
+          <executions>
+              <execution>
+                  <id>position-js-build</id>
+                  <goals>
+                      <goal>copy-resources</goal>
+                  </goals>
+                  <phase>prepare-package</phase>
+                  <configuration>
+                      <outputDirectory>${project.build.directory}/card-memory-game/resources</outputDirectory>
+                      <resources>
+                          <resource>
+                              <directory>${project.basedir}/src/main/resources/build</directory>
+                              <filtering>true</filtering>
+                          </resource>
+                      </resources>
+                  </configuration>
+              </execution>
+          </executions>
+        </plugin>
       </plugins>
   </build>
 </project>

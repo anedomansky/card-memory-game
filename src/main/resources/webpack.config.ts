@@ -27,7 +27,6 @@ const config: webpack.Configuration = {
                     transpileOnly: true,
                 },
             },
-
         ],
     },
     plugins: [
