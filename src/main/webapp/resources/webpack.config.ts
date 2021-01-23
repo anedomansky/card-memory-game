@@ -3,6 +3,7 @@ import path from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const config: webpack.Configuration = {
     module: {
@@ -39,6 +40,7 @@ const config: webpack.Configuration = {
                 files: './ts/**/*.ts',
             },
         }),
+        new CleanWebpackPlugin(),
     ],
     resolve: {
         extensions: ['.ts', '.js'],
@@ -54,7 +56,7 @@ const config: webpack.Configuration = {
         game: ['./ts/game.ts'],
     },
     output: {
-        filename: 'js/[name].bundle.js',
+        filename: 'js/[name].js',
         path: path.resolve(__dirname, './build'),
     },
 };

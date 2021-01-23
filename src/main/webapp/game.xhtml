@@ -12,8 +12,10 @@
     <h1>Game</h1>
     <hr />
     <span>#{game.getMessage()}</span>
-    <h:commandButton action="home" value="Back" />
-    <h:outputScript library="js" name="game.js" /> 
+    <h:form>
+        <h:commandButton action="home?faces-redirect=true" value="Back" />
+    </h:form>
+    <h:outputScript library="js" name="game.bundle.js" /> 
 </body>
 
 </html>

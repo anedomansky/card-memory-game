@@ -31,12 +31,17 @@
       <artifactId>jsf-impl</artifactId>
       <version>2.1.7</version>
   </dependency>
+  <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+  </dependency>
   </dependencies>
   <build>
     <finalName>card-memory-game</finalName>
     <resources>
       <resource>
-        <directory>${project.basedir}/src/main/resources</directory>
+        <directory>${project.basedir}/src/main/webapp/resources</directory>
         <includes>
           <include>build/*</include>
         </includes>
@@ -53,11 +58,19 @@
             </configuration>
         </plugin>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.3.1</version>
+          <configuration>
+            <warSourceExcludes>resources/**</warSourceExcludes>
+          </configuration>
+        </plugin>
+        <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
             <version>3.0.0</version>
             <configuration>
-                <workingDirectory>${project.basedir}/src/main/resources</workingDirectory>
+                <workingDirectory>${project.basedir}/src/main/webapp/resources</workingDirectory>
                 <!-- <installDirectory>${project.build.directory}</installDirectory> -->
             </configuration>
             <executions>
@@ -104,7 +117,7 @@
                       <outputDirectory>${project.build.directory}/card-memory-game/resources</outputDirectory>
                       <resources>
                           <resource>
-                              <directory>${project.basedir}/src/main/resources/build</directory>
+                              <directory>${project.basedir}/src/main/webapp/resources/build</directory>
                               <filtering>true</filtering>
                           </resource>
                       </resources>
