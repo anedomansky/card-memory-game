@@ -4,10 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 
-<head>
+<h:head>
     <title>Card-Memory-Game</title>
-    <h:outputStylesheet library="css" name="home.css" />
-</head>
+    <h:outputStylesheet name="css/home.css" />
+</h:head>
 
 <h:body>
     <h1>NEW GAME</h1>
@@ -41,7 +41,7 @@
     <h:form>
         <h:commandLink action="#{navigation.processPageGame}" value="Start Game" />
     </h:form>
-    <h:outputScript library="js" name="home.bundle.js" />
+    <h:outputScript name="js/home.js" />
 </h:body>
 
 </html>
