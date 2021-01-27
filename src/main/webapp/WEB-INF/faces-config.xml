@@ -8,7 +8,7 @@
    version = "2.0">
    
    <navigation-rule>
-      <from-view-id>home.xhtml</from-view-id>
+      <from-view-id>/home.xhtml</from-view-id>
       <navigation-case>
          <from-action>#{navigation.processPageGame}</from-action>
          <from-outcome>page</from-outcome>
