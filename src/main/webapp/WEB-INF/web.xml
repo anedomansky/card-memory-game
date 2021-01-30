@@ -9,11 +9,6 @@
    <welcome-file-list>
       <welcome-file>faces/home.xhtml</welcome-file>
    </welcome-file-list>
-
-   <context-param>
-      <param-name>javax.faces.CONFIG_FILES</param-name>
-      <param-value>/WEB-INF/faces-config.xml</param-value>
-   </context-param>
 	
    <!-- 
       FacesServlet is main servlet responsible to handle all request. 

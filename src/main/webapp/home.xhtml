@@ -12,34 +12,17 @@
 <h:body>
     <h1>--- NEW GAME ---</h1>
     <hr />
-    <ul>
-        <ui:repeat value="#{home.getGameModes()}" var="mode">
-            <li>
-                <span>#{mode}</span>
-            </li>
-        </ui:repeat>
-    </ul>
+    <h2>Select a game size</h2>
     <h:form>
-        <h3>Using Managed Bean</h3>
-        <h:commandButton action="#{navigation.moveToGame}" value="Start Game (Managed Bean)" />
-        <h3>Using JSF outcome</h3>
-        <h:commandButton action="game" value="Start Game" />
-    </h:form>
-    <br />
-    <h:form>
-        <h:commandLink action="#{navigation.showPage}" value="Start (small)">
-            <f:param name="pageType" value="small" />
-        </h:commandLink>
-        <h:commandLink action="#{navigation.showPage}" value="Start (medium)">
-            <f:param name="pageType" value="medium" />
-        </h:commandLink>
-        <h:commandLink action="#{navigation.showPage}" value="Start (big)">
-            <f:param name="pageType" value="big" />
-        </h:commandLink>
-    </h:form>
-    <br />
-    <h:form>
-        <h:commandLink action="#{navigation.processPageGame}" value="Start Game" />
+        <ul>
+            <ui:repeat value="#{home.getGameModes()}" var="mode">
+                <li>
+                    <h:commandButton action="#{navigation.showPage}" value="#{mode}">
+                        <f:param name="pageType" value="#{mode}" />
+                    </h:commandButton>
+                </li>
+            </ui:repeat>
+        </ul>
     </h:form>
     <h:outputScript name="js/home.js" />
 </h:body>

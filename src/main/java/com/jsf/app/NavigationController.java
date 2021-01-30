@@ -12,23 +12,11 @@ public class NavigationController implements Serializable {
     @ManagedProperty(value="#{param.pageType}")
     private String pageType;
 
-    public String moveToGame() {
-        return "game";
-    }
-
     public String showPage() {
         if (this.pageType == null) {
             return "home";
         }
-        if (this.pageType == "small") {
-            return "game";
-        }
-        if (this.pageType == "medium") {
-            return "game";
-        }
-        else {
-            return "game";
-        }
+        return this.pageType.toLowerCase();
     }
 
     public String getPageType() {
@@ -37,9 +25,5 @@ public class NavigationController implements Serializable {
 
     public void setPageType(String pageType) {
         this.pageType = pageType;
-    }
-
-    public String processPageGame() {
-        return "page";
     }
 }

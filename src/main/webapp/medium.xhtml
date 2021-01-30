@@ -3,19 +3,19 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h = "http://java.sun.com/jsf/html">
 
-<head>
+<h:head>
     <title>Card-Memory-Game</title>
     <h:outputStylesheet name="css/game.css"/> 
-</head>
+</h:head>
 
-<body>
-    <h1>Game</h1>
+<h:body>
+    <h1>Game (MEDIUM)</h1>
     <hr />
     <span>#{game.getMessage()}</span>
     <h:form>
         <h:commandButton action="home?faces-redirect=true" value="Back" />
     </h:form>
     <h:outputScript name="js/game.js" /> 
-</body>
+</h:body>
 
 </html>
