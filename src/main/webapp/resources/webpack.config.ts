@@ -48,7 +48,7 @@ const config: webpack.Configuration = {
     mode: 'production',
     devtool: 'source-map',
     optimization: {
-        noEmitOnErrors: false,
+        emitOnErrors: false,
     },
     stats: 'errors-only',
     entry: {

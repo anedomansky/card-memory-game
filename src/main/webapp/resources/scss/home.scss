@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 body {
     margin: 0;
     line-height: calc(1ex / 0.32);
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(#d5d5d5, #000000);
+    font-family: Ubuntu, sans-serif;
+    background-image: linear-gradient(#ffffff, #0a043c);
     display: grid;
     place-items: center;
     min-height: 100vh;
@@ -19,22 +21,22 @@ main {
         height: 150px;
         position: absolute;
         width: 150px;
-        top: 125px;
+        top: 225px;
     }
 
     &:before {
         background: #ffe897;
-        background: -moz-radial-gradient(top right, #ffe897, #f98a05);
-        background: radial-gradient(to bottom left, #ffe897, #f98a05);
-        background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+        background: -moz-radial-gradient(top right,#03506f, #ffffff);
+        background: radial-gradient(to bottom left,#03506f, #ffffff);
+        background: -webkit-radial-gradient(top right, #03506f, #ffffff);
     }
 
     &:after {
         animation-delay: 2.5s;
         background: #e0e793;
-        background: -moz-radial-gradient(bottom right, #e0e793, #6dd0f1);
-        background: radial-gradient(to top left, #e0e793, #6dd0f1);
-        background: -webkit-radial-gradient(bottom right, #e0e793, #6dd0f1);
+        background: -moz-radial-gradient(bottom right, #ffffff, #a3ddcb);
+        background: radial-gradient(to top left, #ffffff, #a3ddcb);
+        background: -webkit-radial-gradient(bottom right, #ffffff, #a3ddcb);
         right: 0;
         z-index: -1;
     }
@@ -42,13 +44,13 @@ main {
     .card {
         border-radius: 15px;
         box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-        height: 400px;
         overflow: hidden;
         position: relative;
-        width: 500px;
+        width: 800px;
+        height: 600px;
 
         &:before {
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 227, 222, 0.3);
             backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
             content: '';
             height: 100%;
@@ -58,16 +60,50 @@ main {
 
         &__content {
             position: relative;
-            z-index: 2;
+            z-index: 1;
+            padding: 1rem;
+
+            h1 {
+                text-align: center;
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: grid;
+                place-items: center;
+                grid-row-gap: 2rem;
+
+                input {
+                    cursor: pointer;
+                    padding: 0.5rem 1rem;
+                    border-radius: 25%;
+                    border-style: none;
+                    font-size: 1.75rem;
+                    width: 150px;
+                    height: 50px;
+                    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+
+                    &:hover {
+                        border: 1px solid #000000;
+                    }
+                }
+            }
         }
     }
 }
 
 @keyframes orbit {
     from {
-        transform: rotate(0deg) translateX(100px) rotate(0deg);
+        transform: rotate(0deg) translateX(185px) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateX(100px) rotate(-360deg);
+        transform: rotate(360deg) translateX(185px) rotate(-360deg);
     }
 }
