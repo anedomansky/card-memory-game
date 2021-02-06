@@ -1,10 +1,11 @@
+@import './utilities/variables';
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 body {
     margin: 0;
     line-height: calc(1ex / 0.32);
     font-family: Ubuntu, sans-serif;
-    background-image: linear-gradient(#ffffff, #0a043c);
+    background-image: linear-gradient($primary1, $primary2);
     display: grid;
     place-items: center;
     min-height: 100vh;
@@ -16,7 +17,7 @@ main {
     &:before, &:after {
         animation: orbit 5s linear infinite;
         border-radius: 50%;
-        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 1rem 0 $accent1;
         content: '';
         height: 150px;
         position: absolute;
@@ -25,32 +26,32 @@ main {
     }
 
     &:before {
-        background: #ffe897;
-        background: -moz-radial-gradient(top right,#03506f, #ffffff);
-        background: radial-gradient(to bottom left,#03506f, #ffffff);
-        background: -webkit-radial-gradient(top right, #03506f, #ffffff);
+        background: $secondary1;
+        background: -moz-radial-gradient(top right,$secondary1, $primary1);
+        background: radial-gradient(to bottom left,$secondary1, $primary1);
+        background: -webkit-radial-gradient(top right, $secondary1, $primary1);
     }
 
     &:after {
         animation-delay: 2.5s;
-        background: #e0e793;
-        background: -moz-radial-gradient(bottom right, #ffffff, #a3ddcb);
-        background: radial-gradient(to top left, #ffffff, #a3ddcb);
-        background: -webkit-radial-gradient(bottom right, #ffffff, #a3ddcb);
+        background: $secondary2;
+        background: -moz-radial-gradient(bottom right, $primary1, $secondary2);
+        background: radial-gradient(to top left, $primary1, $secondary2);
+        background: -webkit-radial-gradient(bottom right, $primary1, $secondary2);
         right: 0;
         z-index: -1;
     }
 
     .card {
         border-radius: 15px;
-        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 1rem 0 $accent1;
         overflow: hidden;
         position: relative;
         width: 800px;
         height: 600px;
 
         &:before {
-            background-color: rgba(255, 227, 222, 0.3);
+            background-color: $secondary3;
             backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
             content: '';
             height: 100%;
@@ -68,6 +69,10 @@ main {
                 font-size: 2.5rem;
             }
 
+            hr {
+                box-shadow: 0 2px 4px $accent1;
+            }
+
             h2 {
                 font-size: 2rem;
             }
@@ -81,6 +86,7 @@ main {
                 grid-row-gap: 2rem;
 
                 input {
+                    background: linear-gradient($primary1, $secondary2);
                     cursor: pointer;
                     padding: 0.5rem 1rem;
                     border-radius: 25%;
@@ -88,10 +94,11 @@ main {
                     font-size: 1.75rem;
                     width: 150px;
                     height: 50px;
-                    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+                    box-shadow: 0 0 1rem 0 $accent1;
 
                     &:hover {
-                        border: 1px solid #000000;
+                        background: #a3ddcb;
+                        border: 1px solid $accent2;
                     }
                 }
             }
