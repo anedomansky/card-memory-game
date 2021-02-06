@@ -11,7 +11,6 @@ public class Home {
 	
 	public Home() {
 		this.gameModes = new ArrayList<String>();
-		this.gameModes.add("Custom");
 		this.gameModes.add("Small");
 		this.gameModes.add("Medium");
 		this.gameModes.add("Big");

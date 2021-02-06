@@ -70,11 +70,7 @@ main {
             }
 
             hr {
-                box-shadow: 0 2px 4px $accent1;
-            }
-
-            h2 {
-                font-size: 2rem;
+                border: 3px solid $accent2;
             }
 
             ul {
@@ -98,7 +94,7 @@ main {
 
                     &:hover {
                         background: #a3ddcb;
-                        border: 1px solid $accent2;
+                        border: 2px solid $accent2;
                     }
                 }
             }
