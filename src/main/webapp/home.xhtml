@@ -17,11 +17,14 @@
                 <hr />
                 <h:form>
                     <ul>
-                        <ui:repeat value="#{home.getGameModes()}" var="mode">
+                        <ui:repeat value="#{home.getGameModes()}" var="gameMode">
                             <li>
-                                <h:commandButton action="#{navigation.showPage}" value="#{mode}">
-                                    <f:param name="pageType" value="#{mode}" />
+                                <h:commandButton action="#{navigation.showPage}" value="#{gameMode.mode}">
+                                    <f:param name="pageType" value="#{gameMode.mode}" />
                                 </h:commandButton>
+                                <h:outputText styleClass="x" value="#{gameMode.x}" />
+                                <h:graphicImage name="images/cross.svg" alt="times" />
+                                <h:outputText styleClass="y" value="#{gameMode.y}" />
                             </li>
                         </ui:repeat>
                     </ul>

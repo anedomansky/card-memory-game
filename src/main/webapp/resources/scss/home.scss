@@ -70,7 +70,8 @@ main {
             }
 
             hr {
-                border: 3px solid $accent2;
+                border: 2px solid $accent2;
+                border-radius: 2px;
             }
 
             ul {
@@ -80,6 +81,11 @@ main {
                 display: grid;
                 place-items: center;
                 grid-row-gap: 2rem;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                }
 
                 input {
                     background: linear-gradient($primary1, $secondary2);
@@ -96,6 +102,15 @@ main {
                         background: #a3ddcb;
                         border: 2px solid $accent2;
                     }
+                }
+
+                .x, .y {
+                    font-size: 1.75rem;
+                }
+
+                img {
+                    width: 1.75rem;
+                    height: auto;
                 }
             }
         }

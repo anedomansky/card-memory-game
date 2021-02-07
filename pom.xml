@@ -44,6 +44,7 @@
         <directory>${project.basedir}/src/main/webapp/resources</directory>
         <includes>
           <include>build/*</include>
+          <include>images/*</include>
         </includes>
       </resource>
     </resources>
@@ -71,7 +72,6 @@
         <version>3.0.0</version>
         <configuration>
           <workingDirectory>${project.basedir}/src/main/webapp/resources</workingDirectory>
-          <!-- <installDirectory>${project.build.directory}</installDirectory> -->
         </configuration>
         <executions>
           <execution>
@@ -118,6 +118,22 @@
               <resources>
                 <resource>
                   <directory>${project.basedir}/src/main/webapp/resources/build</directory>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>position-assets</id>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <phase>prepare-package</phase>
+            <configuration>
+              <outputDirectory>${project.build.directory}/card-memory-game/resources</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/src/main/webapp/resources/assets</directory>
                   <filtering>true</filtering>
                 </resource>
               </resources>
