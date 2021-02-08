@@ -33,7 +33,7 @@ main {
     }
 
     &:after {
-        animation-delay: 2.5s;
+        animation-direction: reverse;
         background: $secondary2;
         background: -moz-radial-gradient(bottom right, $primary1, $secondary2);
         background: radial-gradient(to top left, $primary1, $secondary2);
@@ -62,11 +62,11 @@ main {
         &__content {
             position: relative;
             z-index: 1;
-            padding: 1rem;
+            padding: 1rem 2rem;
 
             h1 {
                 text-align: center;
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
             hr {
@@ -78,13 +78,12 @@ main {
                 margin: 0;
                 padding: 0;
                 list-style: none;
-                display: grid;
-                place-items: center;
-                grid-row-gap: 2rem;
 
                 li {
                     display: flex;
                     align-items: center;
+                    justify-content: space-evenly;
+                    margin-top: 3.5rem;
                 }
 
                 input {
@@ -93,9 +92,9 @@ main {
                     padding: 0.5rem 1rem;
                     border-radius: 50px;
                     border-style: none;
-                    font-size: 1.75rem;
-                    width: 150px;
-                    height: 50px;
+                    font-size: 2.5rem;
+                    width: 270px;
+                    height: 90px;
                     box-shadow: 0 0 1rem 0 $accent1;
 
                     &:hover {
@@ -105,11 +104,11 @@ main {
                 }
 
                 .x, .y {
-                    font-size: 1.75rem;
+                    font-size: 2.5rem;
                 }
 
                 img {
-                    width: 1.75rem;
+                    width: 2.5rem;
                     height: auto;
                 }
             }
