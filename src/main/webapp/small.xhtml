@@ -1,21 +1,29 @@
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h = "http://java.sun.com/jsf/html">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
     <title>Card-Memory-Game</title>
-    <h:outputStylesheet name="css/game.css"/> 
+    <h:outputStylesheet name="css/game.css" />
 </h:head>
 
 <h:body>
-    <h1>Game (SMALL)</h1>
-    <hr />
-    <span>#{game.getMessage()}</span>
-    <h:form>
-        <h:commandButton action="home?faces-redirect=true" value="Back" />
-    </h:form>
-    <h:outputScript name="js/game.js" /> 
+    <header>
+        <h1>Game (SMALL)</h1>
+    </header>
+    <main>
+        <h:form>
+            <h:commandButton action="home?faces-redirect=true" value="Back" />
+        </h:form>
+        <ui:repeat value="#{small.getIcons()}" var="icon">
+            <li>
+                <h:graphicImage name="#{icon.path}" alt="#{icon.altText}" />
+            </li>
+        </ui:repeat>
+    </main>
+    <h:outputScript name="js/game.js" />
 </h:body>
 
 </html>

@@ -1,8 +1,11 @@
 package com.jsf.app;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class IconService {
     List<Icon> icons;
@@ -33,6 +36,8 @@ public class IconService {
 
     public List<Icon> getShuffledIcons(Integer amount) {
         List<Icon> selectedIcons = new ArrayList<Icon>();
+        List<Icon> firstPartOfShuffledIcons = new ArrayList<Icon>();
+        List<Icon> secondPartOfShuffledIcons = new ArrayList<Icon>();
         List<Icon> shuffledIcons = new ArrayList<Icon>();
         Random rng = new Random();
 
@@ -44,7 +49,6 @@ public class IconService {
                 Icon icon = this.icons.get(index);
                 if (!selectedIcons.contains(icon)) {
                     selectedIcons.add(icon);
-                    selectedIcons.add(icon);
                     i++;
                 }
             }
@@ -52,10 +56,18 @@ public class IconService {
             selectedIcons = List.copyOf(this.icons);
         }
 
-        for(int j = 0; j < selectedIcons.size(); j++) {
-            int index = rng.nextInt(selectedIcons.size());
-            shuffledIcons.add(selectedIcons.get(index));
-        }
+        Set<Icon> setOfIcons = new HashSet<Icon>(selectedIcons.size());
+
+        setOfIcons.addAll(selectedIcons);
+
+        firstPartOfShuffledIcons.addAll(setOfIcons);
+        secondPartOfShuffledIcons.addAll(setOfIcons);
+
+        Collections.shuffle(firstPartOfShuffledIcons);
+        Collections.shuffle(secondPartOfShuffledIcons);
+
+        shuffledIcons.addAll(firstPartOfShuffledIcons);
+        shuffledIcons.addAll(secondPartOfShuffledIcons);
 
         return shuffledIcons;
     }

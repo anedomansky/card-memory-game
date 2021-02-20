@@ -9,7 +9,7 @@ public class Small {
     private List<Icon> icons;
 
     public Small() {
-        this.icons = new IconService().getShuffledIcons(12);
+        this.icons = new IconService().getShuffledIcons(6);
     }
 
     public List<Icon> getIcons() {

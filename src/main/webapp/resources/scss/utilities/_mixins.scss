@@ -1,0 +1,11 @@
+@mixin initial {
+    body {
+        margin: 0;
+        line-height: calc(1ex / 0.32);
+        font-family: Ubuntu, sans-serif;
+        background-image: linear-gradient($primary1, $primary2);
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+    }
+}
