@@ -2,7 +2,11 @@
 @import './utilities/variables';
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
-@include initial;
+body {
+    @include body;
+    display: grid;
+    place-items: center;
+}
 
 main {
     position: relative;

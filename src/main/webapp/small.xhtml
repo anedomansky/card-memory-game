@@ -11,17 +11,24 @@
 
 <h:body>
     <header>
-        <h1>Game (SMALL)</h1>
+        <span class="timer">00:00</span>
+        <span class="moves">0 Move(s)</span>
+        <h:button outcome="small" value="Reload" />
+        <h:button outcome="home" value="Back" />
     </header>
     <main>
-        <h:form>
-            <h:commandButton action="home?faces-redirect=true" value="Back" />
-        </h:form>
-        <ui:repeat value="#{small.getIcons()}" var="icon">
-            <li>
-                <h:graphicImage name="#{icon.path}" alt="#{icon.altText}" />
-            </li>
-        </ui:repeat>
+        <h1>Game (SMALL)</h1>
+        <div class="card">
+            <div class="card__content">
+                <ul>
+                    <ui:repeat value="#{small.getIcons()}" var="icon">
+                        <li>
+                            <h:graphicImage name="#{icon.path}" alt="#{icon.altText}" />
+                        </li>
+                    </ui:repeat>
+                </ul>
+            </div>
+        </div>
     </main>
     <h:outputScript name="js/game.js" />
 </h:body>
