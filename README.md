@@ -4,11 +4,7 @@
 
 `mvn archetype:generate "-DgroupId=com.jsf.app" "-DartifactId=card-memory-game" "-DinteractiveMode=false"`
 
-## Apache Tomcat
-
-sudo chown -RH anedomansky: apache-tomcat-9.0.41
-
-sudo sh -c 'chmod +x apache-tomcat-9.0.41/bin/*.sh'
+## Apache Tomcat Setup for the tomcat7-maven-plugin
 
 mvn tomcat7:redeploy
 
