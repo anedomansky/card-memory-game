@@ -23,7 +23,9 @@
                 <ul>
                     <ui:repeat value="#{small.getIcons()}" var="icon">
                         <li>
-                            <h:graphicImage name="#{icon.path}" alt="#{icon.altText}" />
+                            <button>
+                                <h:graphicImage name="#{icon.path}" alt="#{icon.altText}" />
+                            </button>
                         </li>
                     </ui:repeat>
                 </ul>
