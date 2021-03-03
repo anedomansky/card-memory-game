@@ -5,6 +5,8 @@
     xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Card-Memory-Game</title>
     <h:outputStylesheet name="css/home.css" />
 </h:head>
@@ -19,9 +21,11 @@
                     <ui:repeat value="#{home.getGameModes()}" var="gameMode">
                         <li>
                             <h:button outcome="#{gameMode.mode.toLowerCase()}" value="#{gameMode.mode}" />
-                            <h:outputText styleClass="x" value="#{gameMode.x}" />
-                            <h:graphicImage name="images/cross.svg" alt="times" />
-                            <h:outputText styleClass="y" value="#{gameMode.y}" />
+                            <div>
+                                <h:outputText styleClass="x" value="#{gameMode.x}" />
+                                <h:graphicImage name="images/cross.svg" alt="times" />
+                                <h:outputText styleClass="y" value="#{gameMode.y}" />
+                            </div>
                         </li>
                     </ui:repeat>
                 </ul>

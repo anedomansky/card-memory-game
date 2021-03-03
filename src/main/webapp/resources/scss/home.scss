@@ -5,11 +5,15 @@
 body {
     @include body;
     display: grid;
-    place-items: center;
+    grid-template-areas: 
+    ". . . . ."
+    ". . game . ."
+    ". . . . .";
 }
 
 main {
     position: relative;
+    grid-area: game;
 
     &:before, &:after {
         animation: orbit 5s linear infinite;
@@ -19,7 +23,7 @@ main {
         height: 150px;
         position: absolute;
         width: 150px;
-        top: 225px;
+        top: 180px;
     }
 
     &:before {
@@ -44,8 +48,6 @@ main {
         box-shadow: 0 0 1rem 0 $accent1;
         overflow: hidden;
         position: relative;
-        width: 800px;
-        height: 600px;
 
         &:before {
             background-color: $secondary3;
@@ -63,11 +65,12 @@ main {
 
             h1 {
                 text-align: center;
-                font-size: 3rem;
+                font-size: 2rem;
+                margin: 0 0 2.5rem 0;
             }
 
             hr {
-                border: 2px solid $accent2;
+                border: 2px solid $accent1;
                 border-radius: 2px;
             }
 
@@ -80,7 +83,11 @@ main {
                     display: flex;
                     align-items: center;
                     justify-content: space-evenly;
-                    margin-top: 3.5rem;
+                    margin-top: 1.5rem;
+
+                    &:not(:first-of-type) {
+                        margin-top: 3.5rem;
+                    }
                 }
 
                 input {
@@ -89,35 +96,57 @@ main {
                     padding: 0.5rem 1rem;
                     border-radius: 50px;
                     border-style: none;
-                    font-size: 2.5rem;
+                    font-size: 1.875rem;
                     width: 270px;
                     height: 90px;
-                    box-shadow: 0 0 1rem 0 $accent1;
+                    box-shadow: 0 4px 6px 0 $accent2;
 
                     &:hover {
-                        background: #a3ddcb;
-                        border: 2px solid $accent2;
+                        box-shadow: inset 0 2px 4px 0 $accent3;
                     }
                 }
 
-                .x, .y {
-                    font-size: 2.5rem;
-                }
+                div {
+                    display: flex;
+                    align-items: center;
 
-                img {
-                    width: 2.5rem;
-                    height: auto;
+                    .x, .y {
+                        font-size: 1.875rem;
+                    }
+
+                    .x {
+                        margin-right: 1rem;
+                    }
+
+                    .y {
+                        margin-left: 1rem;
+                    }
+    
+                    img {
+                        width: 1.875rem;
+                        height: auto;
+                    }
                 }
             }
         }
     }
 }
 
+@media all and (max-width: 767px) {
+    main .card .card__content {
+        padding: 0.25rem 0.5rem;
+
+        ul li {
+            flex-wrap: wrap;
+        }
+    }
+}
+
 @keyframes orbit {
     from {
-        transform: rotate(0deg) translateX(185px) rotate(0deg);
+        transform: rotate(0deg) translateX(175px) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateX(185px) rotate(-360deg);
+        transform: rotate(360deg) translateX(175px) rotate(-360deg);
     }
 }
