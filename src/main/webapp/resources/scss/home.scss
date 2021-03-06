@@ -61,12 +61,12 @@ main {
         &__content {
             position: relative;
             z-index: 1;
-            padding: 1rem 2rem;
+            padding: 0.25rem 0.5rem;
 
             h1 {
                 text-align: center;
                 font-size: 2rem;
-                margin: 0 0 2.5rem 0;
+                margin: 0 0 0.5rem 0;
             }
 
             hr {
@@ -83,6 +83,7 @@ main {
                     display: flex;
                     align-items: center;
                     justify-content: space-evenly;
+                    flex-wrap: wrap;
                     margin-top: 1.5rem;
 
                     &:not(:first-of-type) {
@@ -132,12 +133,18 @@ main {
     }
 }
 
-@media all and (max-width: 767px) {
+@media all and (min-height: 600px) {
+    main .card .card__content h1 {
+        margin: 0 0 2.5rem 0;
+    }
+}
+
+@media all and (min-width: 768px) {
     main .card .card__content {
-        padding: 0.25rem 0.5rem;
+        padding: 1rem 2rem;
 
         ul li {
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
         }
     }
 }

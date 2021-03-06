@@ -15,12 +15,12 @@ header {
 }
 
 main {
-    padding: 2rem;
+    padding: 0.5rem;
 
     h1 {
         text-align: center;
         font-size: 2rem;
-        margin: 0 0 2.5rem 0;
+        margin: 0 0 0.5rem 0;
     }
 
     .card {
@@ -40,12 +40,12 @@ main {
 
         &__content {
             position: relative;
-            padding: 1rem 2rem;
+            padding: 0.25rem 0.5rem;
 
             ul {
                 display: grid;
-                grid-template-columns: repeat(4, minmax(125px, 1fr));
-                grid-template-rows: repeat(3, minmax(250px, 1fr));
+                grid-template-columns: repeat(2, minmax(125px, 1fr));
+                grid-template-rows: repeat(6, minmax(125px, 1fr));
                 gap: 1rem;
                 margin: 0;
                 padding: 0;
@@ -54,18 +54,29 @@ main {
                 li {
                     background-color: $primary1;
                     
-                    button {
-                        background-image: linear-gradient(to bottom right, $primary2, $primary1);
+                    .content__btn {
+                        background-image: linear-gradient(to bottom right, $primary1, $accent3);
                         border: none;
                         display: grid;
                         place-items: center;
                         width: 100%;
                         height: 100%;
+                        cursor: pointer;
 
-                        img {
+                        .content__img {
                             width: 100px;
                             height: auto;
+                            visibility: hidden;
                         }
+
+                        .img--show {
+                            visibility: visible;
+                        }
+                    }
+                    
+                    .btn--show {
+                        background-image: linear-gradient(to bottom right, $primary2, $primary1);
+                        cursor: initial;
                     }
                 }
             }
@@ -73,17 +84,23 @@ main {
     }
 }
 
+@media all and (min-height: 600px) {
+    main h1 {
+        margin: 0 0 2.5rem 0;
+    }
+}
 
-@media all and (max-width: 767px) {
+
+@media all and (min-width: 768px) {
     main {
-        padding: 0.5rem;
+        padding: 2rem;
 
         .card .card__content {
-            padding: 0.25rem 0.5rem;
+            padding: 1rem 2rem;
 
             ul {
-                grid-template-columns: repeat(2, minmax(125px, 1fr));
-                grid-template-rows: repeat(6, minmax(125px, 1fr));
+                grid-template-columns: repeat(4, minmax(125px, 1fr));
+                grid-template-rows: repeat(3, minmax(250px, 1fr));
             }
         }
     }

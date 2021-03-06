@@ -21,12 +21,12 @@
     <main>
         <h1>Game (SMALL)</h1>
         <div class="card">
-            <div class="card__content">
+            <div class="card__content content">
                 <ul>
                     <ui:repeat value="#{small.getIcons()}" var="icon">
                         <li>
-                            <button>
-                                <h:graphicImage name="#{icon.path}" alt="#{icon.altText}" />
+                            <button class="content__btn">
+                                <h:graphicImage styleClass="content__img" name="#{icon.path}" alt="#{icon.altText}" />
                             </button>
                         </li>
                     </ui:repeat>
