@@ -2,6 +2,8 @@ package com.jsf.app;
 
 import javax.faces.bean.ManagedBean;
 
+import com.jsf.app.enums.Mode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +13,9 @@ public class Home {
 	
 	public Home() {
 		this.gameModes = new ArrayList<GameMode>();
-		this.gameModes.add(new GameMode("Small", 4, 3));
-		this.gameModes.add(new GameMode("Medium", 6, 4));
-		this.gameModes.add(new GameMode("Big", 8, 5));
+		this.gameModes.add(new GameMode(Mode.SMALL, 4, 3));
+		this.gameModes.add(new GameMode(Mode.MEDIUM, 6, 4));
+		this.gameModes.add(new GameMode(Mode.BIG, 8, 5));
 	}
 	
 	public List<GameMode> getGameModes() {

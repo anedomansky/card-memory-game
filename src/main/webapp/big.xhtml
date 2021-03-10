@@ -1,22 +1,43 @@
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h = "http://java.sun.com/jsf/html">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Card-Memory-Game</title>
-    <h:outputStylesheet name="css/game.css"/> 
+    <h:outputStylesheet name="css/game.css" />
 </h:head>
 
 <h:body>
-    <h1>Game (BIG)</h1>
-    <hr />
-    <h:form>
-        <h:commandButton action="home?faces-redirect=true" value="Back" />
-    </h:form>
-    <h:outputScript name="js/game.js" /> 
+    <header>
+        <span class="timer">00:00</span>
+        <span class="moves">0 Move(s)</span>
+        <h:button outcome="big" value="Reload" />
+        <h:button outcome="home" value="Back" />
+    </header>
+    <main>
+        <h1>Game (BIG)</h1>
+        <div class="card">
+            <div class="card__content content">
+                <ul>
+                    <ui:repeat value="#{game.getIcons('BIG')}" var="icon">
+                        <li>
+                            <button type="button" class="content__btn" tabindex="1">
+                                <h:graphicImage styleClass="content__img" name="#{icon.path}" alt="#{icon.altText}" />
+                            </button>
+                        </li>
+                    </ui:repeat>
+                </ul>
+            </div>
+            <div class="win">
+                <span>YOU WON!</span>
+            </div>
+        </div>
+    </main>
+    <h:outputScript name="js/game.js" />
 </h:body>
 
 </html>

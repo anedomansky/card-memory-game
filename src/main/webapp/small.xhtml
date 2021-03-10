@@ -23,9 +23,9 @@
         <div class="card">
             <div class="card__content content">
                 <ul>
-                    <ui:repeat value="#{small.getIcons()}" var="icon">
+                    <ui:repeat value="#{game.getIcons('SMALL')}" var="icon">
                         <li>
-                            <button class="content__btn">
+                            <button type="button" class="content__btn" tabindex="1">
                                 <h:graphicImage styleClass="content__img" name="#{icon.path}" alt="#{icon.altText}" />
                             </button>
                         </li>
