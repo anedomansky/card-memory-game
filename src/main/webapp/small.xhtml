@@ -13,10 +13,14 @@
 
 <h:body>
     <header>
-        <span class="timer">00:00</span>
-        <span class="moves">0 Move(s)</span>
-        <h:button outcome="small" value="Reload" />
-        <h:button outcome="home" value="Back" />
+        <span class="timer" id="timer">00:00:00 h</span>
+        <span class="moves" id="moves">0 Move(s)</span>
+        <button type="button" class="reload-btn" tabindex="0" id="reload">
+            <h:graphicImage name="images/reset.svg" alt="Reload" />
+        </button>
+        <button type="button" class="back-btn" tabindex="0" id="back">
+            <h:graphicImage name="images/cross.svg" alt="Back" />
+        </button>
     </header>
     <main>
         <h1>Game (SMALL)</h1>
@@ -25,7 +29,7 @@
                 <ul>
                     <ui:repeat value="#{game.getIcons('SMALL')}" var="icon">
                         <li>
-                            <button type="button" class="content__btn" tabindex="1">
+                            <button type="button" class="content__btn" tabindex="0">
                                 <h:graphicImage styleClass="content__img" name="#{icon.path}" alt="#{icon.altText}" />
                             </button>
                         </li>

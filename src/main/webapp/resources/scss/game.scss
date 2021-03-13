@@ -12,6 +12,11 @@ header {
     border-bottom: 5px solid $accent1;
     padding: 1rem;
     line-height: 140%;
+
+    img {
+        width: 1.875rem;
+        height: auto;
+    }
 }
 
 main {

@@ -3,6 +3,9 @@ import '../scss/game.scss';
 let shownElements = 0;
 let matches = 0;
 
+const reloadBtn = document.getElementById('reload');
+const backBtn = document.getElementById('back');
+
 const buttons = Array.from(document.getElementsByClassName('content__btn'));
 
 const neededMatches = buttons.length;
@@ -39,3 +42,7 @@ const toggleClasses = (btnWithImg: Element) => {
 };
 
 buttons.forEach((btn) => btn.addEventListener('click', () => toggleClasses(btn)));
+
+reloadBtn?.addEventListener('click', () => window.location.reload());
+
+backBtn?.addEventListener('click', () => window.history.back());
