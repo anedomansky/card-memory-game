@@ -1,10 +1,18 @@
 import '../scss/game.scss';
+import Navigation from './Navigation';
+import Timer from './Timer';
+
+const navigation = new Navigation();
+navigation.setup();
+
+const timer = new Timer();
 
 let shownElements = 0;
 let matches = 0;
+let moves = 0;
 
-const reloadBtn = document.getElementById('reload');
-const backBtn = document.getElementById('back');
+// own class?
+const movesCounter = document.getElementById('moves');
 
 const buttons = Array.from(document.getElementsByClassName('content__btn'));
 
@@ -13,6 +21,10 @@ const neededMatches = buttons.length;
 const toggleClasses = (btnWithImg: Element) => {
     btnWithImg.classList.add('btn--show');
     btnWithImg.children[0].classList.add('img--show');
+
+    moves += 1;
+
+    movesCounter!.innerText = `${moves} Move(s)`;
 
     shownElements += 1;
 
@@ -37,12 +49,9 @@ const toggleClasses = (btnWithImg: Element) => {
     }
 
     if (matches === neededMatches) {
+        timer.clear();
         document.getElementsByClassName('win')[0].classList.add('win--show');
     }
 };
 
 buttons.forEach((btn) => btn.addEventListener('click', () => toggleClasses(btn)));
-
-reloadBtn?.addEventListener('click', () => window.location.reload());
-
-backBtn?.addEventListener('click', () => window.history.back());
