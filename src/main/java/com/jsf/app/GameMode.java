@@ -5,25 +5,18 @@ import com.jsf.app.enums.Mode;
 public class GameMode {
     private Mode mode;
 
-    private Integer x;
+    private Integer amount;
 
-    private Integer y;
-
-    public GameMode(Mode mode, Integer x, Integer y) {
+    public GameMode(Mode mode, Integer amount) {
         this.mode = mode;
-        this.x = x;
-        this.y = y;
+        this.amount = amount;
     }
 
     public String getMode() {
         return this.mode.toString();
     }
 
-    public Integer getX() {
-        return this.x;
-    }
-
-    public Integer getY() {
-        return this.y;
+    public Integer getAmount() {
+        return this.amount;
     }
 }

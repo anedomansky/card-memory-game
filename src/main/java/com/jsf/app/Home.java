@@ -13,9 +13,9 @@ public class Home {
 	
 	public Home() {
 		this.gameModes = new ArrayList<GameMode>();
-		this.gameModes.add(new GameMode(Mode.SMALL, 4, 3));
-		this.gameModes.add(new GameMode(Mode.MEDIUM, 6, 4));
-		this.gameModes.add(new GameMode(Mode.BIG, 8, 5));
+		this.gameModes.add(new GameMode(Mode.SMALL, 12));
+		this.gameModes.add(new GameMode(Mode.MEDIUM, 24));
+		this.gameModes.add(new GameMode(Mode.BIG, 40));
 	}
 	
 	public List<GameMode> getGameModes() {
