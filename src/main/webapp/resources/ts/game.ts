@@ -12,4 +12,7 @@ const gameProps: GameProps = {
 
 const game = new CardGame(gameProps);
 
+// create toggleClasses function here
+
+// add toggleClasses function as parameter
 game.start();

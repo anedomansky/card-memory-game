@@ -1,7 +1,7 @@
 import { GameProps } from './interfaces/GameProps';
-import MoveCounter from './MoveCounter';
-import Navigation from './Navigation';
-import Timer from './Timer';
+import MoveCounter from './withMoveCounter';
+import Navigation from './withNavigation';
+import Timer from './withTimer';
 
 class CardGame {
     private navigation: Navigation;
