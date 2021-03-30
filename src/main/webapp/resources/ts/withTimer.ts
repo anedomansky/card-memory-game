@@ -11,7 +11,7 @@ const withTimer = ({ elementId }: Props) => (o: Record<string, unknown>) => {
 
     return {
         ...o,
-        start() {
+        startTimer() {
             timeInterval = setInterval(() => {
                 seconds += 1;
 
@@ -26,7 +26,7 @@ const withTimer = ({ elementId }: Props) => (o: Record<string, unknown>) => {
                 timer!.innerHTML = `${hours > 9 ? hours : `0${hours}`}:${minutes > 9 ? minutes : `0${minutes}`}:${seconds > 9 ? seconds : `0${seconds}`} h`;
             }, 1000);
         },
-        clear() {
+        clearTimer() {
             if (timeInterval) {
                 clearInterval(timeInterval);
             }

@@ -8,7 +8,7 @@ const withMoveCounter = ({ elementId }: Props) => (o: Record<string, unknown>) =
 
     return {
         ...o,
-        increment() {
+        incrementMoves() {
             moves += 1;
             if (counter) {
                 counter.innerText = `${moves} Move(s)`;
