@@ -12,26 +12,26 @@ public class IconService {
 
     public IconService() {
         this.icons = new ArrayList<Icon>();
-        this.icons.add(new Icon("images/diamond.svg", "Diamond"));
-        this.icons.add(new Icon("images/dice-one.svg", "Dice"));
-        this.icons.add(new Icon("images/flag.svg", "Flag"));
-        this.icons.add(new Icon("images/globe.svg", "Globe"));
-        this.icons.add(new Icon("images/heart.svg", "Heart"));
-        this.icons.add(new Icon("images/house.svg", "House"));
-        this.icons.add(new Icon("images/letter.svg", "Letter"));
-        this.icons.add(new Icon("images/lock.svg", "Padlock"));
-        this.icons.add(new Icon("images/moon.svg", "Moon"));
-        this.icons.add(new Icon("images/puzzle-piece.svg", "Puzzle piece"));
-        this.icons.add(new Icon("images/religious-cross.svg", "Religious cross"));
-        this.icons.add(new Icon("images/saw.svg", "Saw"));
-        this.icons.add(new Icon("images/skull.svg", "Skull"));
-        this.icons.add(new Icon("images/star.svg", "Star"));
-        this.icons.add(new Icon("images/stick-figure.svg", "Stick figure"));
-        this.icons.add(new Icon("images/sun.svg", "Sun"));
-        this.icons.add(new Icon("images/three.svg", "Roman three"));
-        this.icons.add(new Icon("images/triangle.svg", "Triangle"));
-        this.icons.add(new Icon("images/umbrella.svg", "Umbrella"));
-        this.icons.add(new Icon("images/cross.svg", "Times"));
+        this.icons.add(new Icon("images/diamond.png", "Diamond"));
+        this.icons.add(new Icon("images/dice-one.png", "Dice"));
+        this.icons.add(new Icon("images/flag.png", "Flag"));
+        this.icons.add(new Icon("images/globe.png", "Globe"));
+        this.icons.add(new Icon("images/heart.png", "Heart"));
+        this.icons.add(new Icon("images/house.png", "House"));
+        this.icons.add(new Icon("images/letter.png", "Letter"));
+        this.icons.add(new Icon("images/lock.png", "Padlock"));
+        this.icons.add(new Icon("images/moon.png", "Moon"));
+        this.icons.add(new Icon("images/puzzle-piece.png", "Puzzle piece"));
+        this.icons.add(new Icon("images/religious-cross.png", "Religious cross"));
+        this.icons.add(new Icon("images/saw.png", "Saw"));
+        this.icons.add(new Icon("images/skull.png", "Skull"));
+        this.icons.add(new Icon("images/star.png", "Star"));
+        this.icons.add(new Icon("images/stick-figure.png", "Stick figure"));
+        this.icons.add(new Icon("images/sun.png", "Sun"));
+        this.icons.add(new Icon("images/three.png", "Roman three"));
+        this.icons.add(new Icon("images/triangle.png", "Triangle"));
+        this.icons.add(new Icon("images/umbrella.png", "Umbrella"));
+        this.icons.add(new Icon("images/cross.png", "Times"));
     }
 
     public List<Icon> getShuffledIcons(Integer amount) {
